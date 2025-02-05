@@ -2,13 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BasicHit : MonoBehaviour
 {
     [SerializeField] private Collider2D hitBox;
     private bool canHit = true;
+
+    private Animator _animator;
+    
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         hitBox.enabled = false;
     }
 
@@ -22,10 +27,10 @@ public class BasicHit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && canHit)
         {
-            Debug.Log("uau");
             hitBox.enabled = true;
             canHit = false;
-            Invoke("Cooldown", 3);
+            Invoke("Cooldown", 0.2f);
+            _animator.SetTrigger("Attack" + (int)Random.Range(1, 4));
         }
     }
     

@@ -2,72 +2,94 @@ Shader "Unlit/WorldSpaceSDF"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-
-        _CenterPoint ("Center Point", Vector) = ( .0, .0, .0, 1.0 )
-        _Color ("SDF Color", Color) = (.25, .5, .5, 1)
+        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+        _Color ("Tint", Color) = (1,1,1,1)
+        [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
+        [HideInInspector] _RendererColor ("RendererColor", Color) = (1,1,1,1)
+        [HideInInspector] _Flip ("Flip", Vector) = (1,1,1,1)
+        [PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
+        [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
     }
+
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags
+        {
+            "Queue"="Transparent"
+            "IgnoreProjector"="True"
+            "RenderType"="Transparent"
+            "PreviewType"="Plane"
+            "CanUseSpriteAtlas"="True"
+        }
+
+        Cull Off
+        Lighting Off
+        ZWrite Off
+        Blend One OneMinusSrcAlpha
 
         Pass
         {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
+        CGPROGRAM
+            #pragma vertex SpriteVertBubble
+            #pragma fragment SpriteFragBubble
+            #pragma target 2.0
+            #pragma multi_compile_instancing
+            #pragma multi_compile_local _ PIXELSNAP_ON
+            #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
+            
+            #include "UnitySprites.cginc"
+            
+            float4 _CenterPoint;
+            float4 _EnemyColor;
+            
+            #define CENTER _CenterPoint.xyz
+            #define RADIUS _CenterPoint.w
 
-            #include "UnityCG.cginc"
 
-#define CENTER _CenterPoint.xyz
-#define RADIUS _CenterPoint.w
-
-            struct appdata
+            struct v2fBubble
             {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
+                float4 vertex   : SV_POSITION;
+                fixed4 color    : COLOR;
+                float2 texcoord : TEXCOORD0;
 
                 float4 worldPos : TEXCOORD1;
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float4 _CenterPoint;
-            float4 _Color;
-
-            v2f vert (appdata v)
+            
+            v2fBubble SpriteVertBubble(appdata_t IN)
             {
-                v2f o;
+                v2fBubble OUT;
 
-                o.worldPos = mul (unity_ObjectToWorld, v.vertex);
+                UNITY_SETUP_INSTANCE_ID (IN);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
+                OUT.worldPos = mul (unity_ObjectToWorld, IN.vertex);
 
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                OUT.vertex = UnityFlipSprite(IN.vertex, _Flip);
+                OUT.vertex = UnityObjectToClipPos(OUT.vertex);
+                OUT.texcoord = IN.texcoord;
+                OUT.color = IN.color * _Color * _RendererColor;
 
-                
-                return o;
+                #ifdef PIXELSNAP_ON
+                OUT.vertex = UnityPixelSnap (OUT.vertex);
+                #endif
+
+                return OUT;
             }
-
-            fixed4 frag (v2f i) : SV_Target
+            
+            fixed4 SpriteFragBubble(v2fBubble IN) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-
-                float distance = length( i.worldPos - CENTER );
+                fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
+                float distance = length( IN.worldPos - CENTER );
                 float multiplier = step( distance, RADIUS );
 
-                col.rgb = lerp(col.rgb, _Color, multiplier);
-                
-                return col;
+                c.rgb = lerp(c.rgb, _EnemyColor, multiplier);
+
+                c.rgb *= c.a;
+                return c;
             }
-            ENDCG
+
+        ENDCG
         }
     }
 }

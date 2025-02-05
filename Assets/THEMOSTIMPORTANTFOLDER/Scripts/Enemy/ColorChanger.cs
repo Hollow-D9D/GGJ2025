@@ -10,21 +10,6 @@ public class ColorChanger : MonoBehaviour
     public void ChangeColor()
     {
         Debug.Log("Hop hey lalaley");
-        _spriteRenderer.color = GlobalData.CurrentTimeState == GlobalData.TimeState.TIME_STATE_DAY
-            ? GlobalData.DayColor
-            : GlobalData.NightColor;
-    }
 
-    private void OnDestroy()
-    {
-        GlobalData.OnCycleChanged.RemoveListener(ChangeColor);
     }
-
-    private void Start()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        GlobalData.OnCycleChanged.AddListener(ChangeColor);
-    }
-    
-    
 }

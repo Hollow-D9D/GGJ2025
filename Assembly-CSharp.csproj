@@ -41,58 +41,140 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\USER\Documents\GitHub\GGJ2025\Assets\Thirdparty\Plugins\Demigiant\DOTween\DOTween.dll" />
-    <Analyzer Include="C:\Users\USER\Documents\GitHub\GGJ2025\Assets\Thirdparty\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll" />
-  </ItemGroup>
-  <ItemGroup>
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Movement.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Camera\FollowPlayer.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\EnemyBehavior.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Global\GlobalData.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateComponent.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateAggressive.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateRoamin.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateChillin.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat\BasicHit.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\HealthBase.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\EnemyHealth.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\HeroHealth.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\MeleeWeapon.cs" />
-     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat\Bubble.cs" />
      <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateAttackin.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateComponent.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat\BasicHit.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\UICues\Resist\ResistText.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateChillin.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Camera\FollowPlayer.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\UIFeedBack.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Bubblable.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateRoamin.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat\Projectile.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\HeroHealth.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Movement.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\DoorLogic.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\EnemyHealth.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents\EnemyStateAggressive.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\UICues\Test.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\EnemyBehavior.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\MeleeWeapon.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\HealthBase.cs" />
+     <Compile Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Global\GlobalData.cs" />
+     <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat\Bubble.cs" />
      <Compile Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\ColorChanger.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\THEMOSTIMPORTANTFOLDER\Materials\BubbleShaderFinal.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Fire_VFX" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo\SaqoRun" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <Folder Include="Assets\Thirdparty\Resources" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Sprites\Platforms" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\UICues\Resist" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Thirdparty\Plugins" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites\Level" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps\Tiles\Platforms" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites\Level\Materials" />
      <None Include="Assets\THEMOSTIMPORTANTFOLDER\Materials\BubbleShader.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps\Tiles\Platform Shadows" />
      <None Include="Assets\THEMOSTIMPORTANTFOLDER\Materials\WorldSpaceSDF.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\Modules" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton\SkeletonDead" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\UICues" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Sprites\Env\Materials" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Prefabs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\Thirdparty\Plugins\Demigiant\DOTween" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton\SkeletonIdle" />
      <Folder Include="Assets\Settings\Scenes" />
+     <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sound" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo\SaqoIdle" />
+     <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard\WizardAttack" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Sprites" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites\Level\Materials\Textures" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard\WizardTakesHit" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Sprites\Walls" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress\HuntressAttack" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard\WizardMove" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Sprites\Env" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton\SkeletonWalk" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo\SaqoIsDead" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress\HuntressDied" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton\SkeletonAttack" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo\SaqoTakesHit" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites\Level\Sprites\Foreground Shadows" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps\Tiles\Walls" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard\WizardIdle" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress\HuntressTakesHit" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress\HuntressRun" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Scenes" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Combat" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Thirdparty\Plugins\Demigiant\DOTween\readme.txt" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy\StateComponents" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Materials" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps\Tiles" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Wizard\WizardDead" />
      <Folder Include="Assets\Thirdparty" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Character\Camera" />
      <Folder Include="Assets\Thirdparty\Plugins\Demigiant" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps\Palettes" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Saqo\SaqoAttacks" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Test_Sprites\Level\Sprites" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Map\Tilemaps" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Skeleton\SkeletonTakesHit" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Enemy" />
      <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Scripts\Global" />
+     <Folder Include="Assets\THEMOSTIMPORTANTFOLDER\Sprites\Huntress\HuntressIdle" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.29f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -339,11 +421,11 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.29f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>C:\Users\USER\Documents\GitHub\GGJ2025\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="DOTween">
      <HintPath>C:\Users\USER\Documents\GitHub\GGJ2025\Assets\Thirdparty\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>C:\Users\USER\Documents\GitHub\GGJ2025\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.29f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

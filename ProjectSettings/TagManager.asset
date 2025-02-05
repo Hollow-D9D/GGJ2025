@@ -15,8 +15,8 @@ TagManager:
   - Player
   - PlayerWeapon
   - EnemyWeapon
-  - 
-  - 
+  - Bubble
+  - Door
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map Elements
+    uniqueID: 2460174177
+    locked: 0
+  - name: Map Props
+    uniqueID: 1899054899
+    locked: 0
+  - name: DynamicElements
+    uniqueID: 3753464435
     locked: 0

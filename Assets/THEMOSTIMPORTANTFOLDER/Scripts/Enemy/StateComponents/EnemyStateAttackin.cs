@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyStateAttackin : EnemyStateComponent
 {
    [SerializeField] private Collider2D weaponHitbox;
-   [SerializeField] private float hitTime = 2f;
+   [SerializeField] private float hitTime = .5f;
 
    private bool IsHitting;
 
@@ -20,7 +21,6 @@ public class EnemyStateAttackin : EnemyStateComponent
    {
       if (!IsHitting)
       {
-         
          StartCoroutine(Attack());
       }
    }
@@ -34,12 +34,12 @@ public class EnemyStateAttackin : EnemyStateComponent
 
    private IEnumerator Attack()
    {
-      yield return new WaitForSeconds(hitTime);
+      yield return new WaitForSeconds(0.3f);
+      _animator.SetTrigger("Attack" + Random.Range(1,2));
       IsHitting = true;
       weaponHitbox.gameObject.SetActive(IsHitting);
       yield return new WaitForSeconds(hitTime);
       weaponHitbox.gameObject.SetActive(false);
-      yield return new WaitForFixedUpdate();
       IsHitting = false;
    }
 }

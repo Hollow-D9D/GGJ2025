@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyStateAggressive : EnemyStateComponent
 {
-    [SerializeField] private float Speed = 1f;
+    private float Speed = 5f;
 
     private Transform _player;
     private Rigidbody2D _rigidbody2D;
@@ -26,6 +26,5 @@ public class EnemyStateAggressive : EnemyStateComponent
 //        Debug.Log("Hellomoto");
         Vector3 dir = (_player.position - transform.position).normalized;
         _rigidbody2D.velocity = dir * Speed;
-        transform.rotation = Quaternion.Euler(0,0, (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg ));
     }
 }

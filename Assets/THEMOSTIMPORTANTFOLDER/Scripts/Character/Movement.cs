@@ -6,12 +6,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed;
-
+    private Animator _animator;
     Rigidbody2D _rb;
     float _dirHorizontal;
     float _dirVertical;
 
-    private void Awake() => _rb = GetComponent<Rigidbody2D>();
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
 
     void Start() => _rb.gravityScale = 0;
@@ -28,9 +32,17 @@ public class Movement : MonoBehaviour
             _rb.velocity = _rb.velocity.normalized * speed;
         }
 
-        DetermineRotation();
+        if (_rb.velocity.magnitude > 0.3f)
+        {
+            _animator.SetBool("Run", true);
+        }
+        else
+        {
+            _animator.SetBool("Run", false);
+        }
         
         
+        transform.eulerAngles = new Vector3(0,  _rb.velocity.x < 0 ? 180f : _rb.velocity.x > 0 ? 0 : transform.eulerAngles.y, 0);
     }
 
     private void DetermineRotation()

@@ -9,7 +9,7 @@ public class MeleeWeapon : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Hit: " + other.name);
         other.GetComponent<HealthBase>().TakeDamage(damage);
-        // Debug.Log("Hit: " + other.name);
     }
 }

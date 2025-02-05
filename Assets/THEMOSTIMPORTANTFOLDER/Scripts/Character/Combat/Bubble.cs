@@ -5,14 +5,35 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
+    [SerializeField] private GameObject Projectile;
+
+    private bool CanUseBubble = true;
+    private Camera _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetMouseButton(1) && CanUseBubble)
         {
-            GlobalData.CurrentTimeState = (GlobalData.TimeState)((int)GlobalData.CurrentTimeState * -1);
-            // Debug.Log(GlobalData.CurrentTimeState);
+            Shoot();
             
-            GlobalData.OnCycleChanged.Invoke();
+            CanUseBubble = false;
         }
+    }
+    
+    void Reload() => CanUseBubble = true;
+    
+    public void Shoot()
+    {
+        Vector3 mouseWorldPos = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _camera.nearClipPlane));
+        Debug.Log(mouseWorldPos);
+        mouseWorldPos.z = transform.position.z;
+        Vector3 dir = (mouseWorldPos - transform.position).normalized;
+        Instantiate(Projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Shoot(dir);
+        Invoke("Reload", 4f);
     }
 }
